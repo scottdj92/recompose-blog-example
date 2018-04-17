@@ -1,4 +1,4 @@
-import { branch, renderNothing, renderComponent } from "recompose";
+import { branch, renderComponent } from "recompose";
 import Loader from "../loader";
 import { StateProps } from "../app";
 

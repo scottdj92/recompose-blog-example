@@ -3,6 +3,7 @@ import { compose, withProps } from "recompose";
 import withData from "./providers/withData";
 import whileLoading from "./providers/whileLoading";
 import { Wrapper, Title } from "./style";
+import MoveList from "./components/move-list";
 
 export interface StateProps {
     data: {
@@ -14,15 +15,13 @@ export interface StateProps {
 export default compose<StateProps, {}>(
     withData,
     whileLoading,
-)(({
-    data: {
-        name,
-        weight,
-    }
-}) => (
+)((props) => {
+    console.log(props);
+    return (
         <Wrapper>
-            <Title>pokemon: {name}</Title>
-            <Title>weight: {weight}</Title>
+            <Title>pokemon: {props.data.name}</Title>
+            <Title>weight: {props.data.weight}</Title>
+            <MoveList/>
         </Wrapper>
-    ),
-);
+    );
+});
