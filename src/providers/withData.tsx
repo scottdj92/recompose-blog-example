@@ -12,8 +12,8 @@ const withData = (WrappedComponent: React.Component) => (
         constructor(props) {
             super(props);
             this.state = {
-                data: {},
-                error: {},
+                data: null,
+                error: "",
             }
         }
 
@@ -24,7 +24,7 @@ const withData = (WrappedComponent: React.Component) => (
         }
 
         render() {
-            return <WrappedComponent {this.state} {...this.props}/>
+            return (<WrappedComponent {...this.state} {...this.props}/>);
         }
     }
 );
