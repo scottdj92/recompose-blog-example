@@ -22,7 +22,7 @@ const withData = (WrappedComponent: React.Component) => (
         }
 
         async componentDidMount() {
-            await client.get("generation/1")
+            await client.get("pokemon/1")
                 .then(response => this.setState({data: response.data}))
                 .catch(e => this.setState({error: e}));
         }

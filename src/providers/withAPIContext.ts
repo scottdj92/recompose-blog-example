@@ -8,15 +8,22 @@ export const APIPropTypes = {
 };
 
 export interface APIContext {
-    data: any;
+    data: {
+        name: string;
+        weight: number;
+        moves: {
+            move: {
+                name: string;
+            }
+        }[];
+    };
 }
 
 const context = withContext<APIContext, APIContext>(
     APIPropTypes,
-    (props) => {
-        console.log(props);
-        return props;
-    }
+    ({data}) => ({
+        data,
+    })
 );
 
 export default compose(
