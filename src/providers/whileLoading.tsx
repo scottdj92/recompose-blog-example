@@ -1,9 +1,9 @@
 import { branch, renderComponent } from "recompose";
 import Loader from "../loader";
-import { StateProps } from "../app";
+import { APIContext } from "./withAPIContext";
 
 const whileLoading = (WrappedComponent: React.ComponentType) => branch(
-    (props: StateProps) => props.data === null,
+    (props: APIContext) => props.data === null,
     renderComponent(Loader),
 )(WrappedComponent);
 
